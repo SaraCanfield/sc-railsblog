@@ -17,7 +17,9 @@ class UsersController < ApplicationController
   #end
   def show
   	@user = User.find(params[:id])
-  end
+    @posts = User.find_by(id: params[:id]).posts
+ end
+  
   def edit
   	@user = User.find(params[:id])
   end

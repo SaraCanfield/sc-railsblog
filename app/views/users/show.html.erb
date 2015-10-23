@@ -6,7 +6,7 @@
   <%= @user.lname %>
 
   </p>
-  
+
   <p>
 <strong>Email</strong>
   <%= @user.email %>
@@ -14,5 +14,10 @@
 
 <p> 
 <strong>Here are the posts associated with this user</strong>
+   <% @posts.each do |post| %>
+      <tr>
+        
+         <td><%= post.content %></td>
 
+           <% end %>
 </p>
