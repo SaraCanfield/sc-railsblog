@@ -1,3 +1,23 @@
-<% @posts.each do |post| %>   
-<%=post.content%> <br>
-<% end %> 
+
+
+<table border = "1">
+
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.user_id %></td>
+         <td><%= post.content %></td>
+        <td><a href="/posts/<%= post.id %>">Show</a></td>
+        
+        <td><%= link_to "Edit", edit_post_path(post) %></td>
+         <td><%= link_to("Delete", post_path(post.id), method: :delete)%></td>
+     
+   
+      </tr>
+
+    <% end %>
+  </tbody>
+</table>
+<br>
+
+<%= link_to 'New Post', new_post_path %>

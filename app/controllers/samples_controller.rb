@@ -71,4 +71,7 @@ class SamplesController < ApplicationController
     def sample_params
       params.require(:sample).permit(:fname, :lname, :email)
     end
+    def user_params
+      params.require(:user).permit(:fname, :lname, :email, :password)
+    end
 end
